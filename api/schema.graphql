@@ -1,0 +1,42 @@
+scalar GraphQLDate
+type Customer {
+  name: String!
+  email: String!
+  birthdate: GraphQLDate
+  account_balance: Float!
+  account_number: String!
+  created_on: GraphQLDate
+}
+input CustomerInputs {
+  name: String!
+  email: String!
+  birthdate: GraphQLDate
+}
+enum Status {
+  INITIATED
+  PROCESSING
+  COMPLETED
+}
+type Transfer {
+  from_account: String!
+  to_account: String!
+  amount: Float!
+  status: Status
+  timestamp: GraphQLDate
+}
+input TransferInputs {
+  from_account: String!
+  to_account: String!
+  amount: Float!
+}
+type Query {
+  about: String!
+  getAllCustomers: [Customer]
+  getCustomer(account_number: String!): Customer
+  getAllTransfers: [Transfer]
+}
+type Mutation {
+  setAboutMessage(message: String!): String
+  transferFunds(transferDetails: TransferInputs!): Transfer
+  addCustomer(customer: CustomerInputs!): Customer
+}
