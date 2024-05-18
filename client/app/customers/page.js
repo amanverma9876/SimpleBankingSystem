@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import graphQLFetch from "../../api/graphqlFetch";
+import graphQLFetch from "../api/graphqlFetch";
 import Link from "next/link";
 import styles from "./page.module.css";
 export default function Customers() {
