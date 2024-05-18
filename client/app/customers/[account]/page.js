@@ -1,5 +1,5 @@
 "use client";
-import graphQLFetch from "../../api/graphQLFetch";
+import graphQLFetch from "../../api/graphqlFetch";
 import { useEffect, useState } from "react";
 import styles from "./page.module.css";
 export default function Customer({ params }) {
